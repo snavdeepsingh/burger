@@ -22,4 +22,24 @@ $(function(){
         );
       });
 
+
+      $("#addBurger").on("submit", function(event){
+          event.preventDefault();
+          var newBurger = {
+              burger_name: $("#burgerName").val().trim()
+          };
+
+        //   send the post request
+        $.ajax("/burgers",{
+            type: "POST",
+            data: newBurger
+        }).then(
+            function(){
+                console.log("Added new Burger : ", newBurger);
+                // Reload  the page to get the updated list
+                location.reload();
+            }
+        )
+      });
+
     });

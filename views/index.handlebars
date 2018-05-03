@@ -1,52 +1,56 @@
-<h1>Eat da Burger 1</h1>
+
 <main>
     <div class="container">
         <div class="jumbotron">
-        <div class="row">
-            <div class="col-6">
-                <div>
-                    <ul>
-                        {{#each burgers}} {{#unless devoured}}
-                        <li>
-                            <p>
-                                {{this.id}}. {{this.burger_name}}
+            <h1>Eat da Burger </h1>
+            <div class="row">
+                <div class="col-6">
+                    <div>
+                        <ul>
+                            {{#each burgers}} {{#unless devoured}}
+                            <li>
+                                <p>
+                                    {{this.id}}. {{this.burger_name}}
 
-                                <button data-id="{{this.id}}" data-devour="{{devour}}" class="devourBurger">{{#unless devoured}}Devour!{{/unless}}</button>
-                            </p>
-                        </li>
-                        {{/unless}} {{/each}}
-                    </ul>
+                                    <button data-id="{{this.id}}" data-devour="{{devour}}" class="devourBurger">{{#unless devoured}}Devour!{{/unless}}</button>
+                                </p>
+                            </li>
+                            {{/unless}} {{/each}}
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-6">
-                <div>
-                    <ul>
-                        {{#each burgers}} {{#if this.devoured}}
-                        <li>
-                            <p>
-                                {{this.id}}. {{this.burger_name}}
+                <div class="col-6">
+                    <div>
+                        <ul>
+                            {{#each burgers}} {{#if this.devoured}}
+                            <li>
+                                <p>
+                                    {{this.id}}. {{this.burger_name}}
 
-                                <button data-burgerId="{{id}}" data-devour="{{devour}}" class="devourBurger">Devoured!</button>
-                            </p>
-                        </li>
-                        {{/if}} {{/each}}
-                    </ul>
+                                    <button data-burgerId="{{id}}" data-devour="{{devour}}" class="devourBurger">Devoured!</button>
+                                </p>
+                            </li>
+                            {{/if}} {{/each}}
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="row">
+                    
+                    <form id="addBurger" class="button-size">
+                        <input type="text" id="burgerName" name="name">
+                        <button type="submit">Add Burger</button>
+                    </form>
+                </div>
+
             </div>
-        </div>
         </div>
     </div>
 </main>
 
 
 
-<h2>Add a Burger</h2>
-<form id="addBurger" class="button-size">
-    <textarea type="text" name="burger_name"></textarea>
-    <button type="submit">Add Burger</button>
-</form>
 
- <footer class="page-footer">
-          
-         
+
+<footer class="page-footer">

@@ -27,7 +27,7 @@ module.exports = function (app) {
             req.body.burger_name
         ], function (data) {
             // send back the ID of the new quote
-            res.json({ id: result.insertId });
+            res.json({ id: res.insertId });
             // res.redirect("/");
         })
     });
