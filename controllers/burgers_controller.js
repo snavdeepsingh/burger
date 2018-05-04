@@ -39,7 +39,7 @@ module.exports = function (app) {
         console.log("condition", condition);
 
         burger.updateOne({
-            devoured: true
+            devoured: req.body.devoured
         }, condition, function (data) {
             if (res.changedRows == 0) {
                 // if no rows were changed, then ID must nor exist, so 404

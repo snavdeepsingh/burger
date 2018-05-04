@@ -3,10 +3,8 @@ $(function(){
         var id = $(this).data("id");
         var newState = $(this).data("devour");
         
-
-    
         var newDevourState = {
-          devoured: newState
+          devoured: (newState ? 0 : 1)
         };
     
         // Send the PUT request.
@@ -38,6 +36,7 @@ $(function(){
                 console.log("Added new Burger : ", newBurger);
                 // Reload  the page to get the updated list
                 location.reload();
+                $("#burgerName").val("");
             }
         )
       });
